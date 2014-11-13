@@ -20,7 +20,6 @@
             <!-- Include side bar -->
             <?php include ('includes/sidebar.php') ?>
 <?php
-
 if(ISSET($_POST['invita'])){
 function get_rand_id($length)
 {
