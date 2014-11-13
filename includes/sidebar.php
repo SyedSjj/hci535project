@@ -21,6 +21,12 @@
 					<i class="fa fa-dashboard"></i> <span>Dashboard</span>
 				</a>
 			</li>
+			<li>
+				<a href="income.php">
+					<i class="fa fa-usd"></i>
+					<span>Income</span>
+				</a>
+			</li>
 			<li class="treeview">
 				<a href="">
 					<i class="fa fa-users"></i> 

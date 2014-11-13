@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
 		
-       <title>Budget Planner | Calendar</title>
-		
+        <title>Budget Planner | Calendar</title>
+		<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- Include all the css stuff -->
 		<?php include ('includes/cssLibrary.php') ?>
 		
@@ -92,5 +92,8 @@
 		
 		<!-- Include all the js stuff -->
         <?php include ('includes/jsLibrary.php') ?>
+		
+		<?php include ('includes/calendar.php') ?>
+		
     </body>
 </html>

@@ -28,8 +28,8 @@
 				</section>
 			</aside>
 			
-			<aside class="right-side">
-				<div class="box" style="margin-top:15px;">
+			<aside class="right-side" style="margin-right: 30px;">
+				<div class="box box-warning" style="margin-top:15px; margin-left:15px;">
 					<div class="box-header">
 						<h3 class="box-title">Add Charts</h3>
 					</div>

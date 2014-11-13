@@ -30,8 +30,8 @@
 			</aside>
 			
 			<aside class="right-side">
-				<div class="col-md-5" style="padding-top:15px; padding-right: 0px;">	
-					<div class="box">
+				<div class="col-md-5" style="padding-top:15px; padding-right: 0px; right:-5px;">	
+					<div class="box box-warning">
 						<div class="box-body">
 							<a href="#">How to add an Expense.</a><br/>
 							<a href="#">How to Add a Category.</a><br/>
@@ -48,12 +48,12 @@
 						</div>
 					</div>
 				</div>
-				<div align="center" class="col-md-7" style="padding-top:15px; padding-left: 0px; height:100%;">
-					<div class="box">
+				<div align="center" class="col-md-7" style="padding-top:15px; padding-left: 0px; height:100%; right:5px;">
+					<div class="box box-warning">
 						<div class="box-body">
 							<div class="timeline-item">
 								<div class="timeline-body">
-									<iframe width="580" height="348" src="//www.youtube.com/embed/ybn3Di-z2ic" frameborder="0" allowfullscreen></iframe>
+									<iframe width="580" height="348" src="//www.youtube.com/embed/gV1-M4uRiiw" frameborder="0" allowfullscreen></iframe>
 								</div>
 							</div>
 						</div>

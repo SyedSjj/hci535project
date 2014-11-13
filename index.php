@@ -177,6 +177,8 @@
 									<option>Category 1</option>
 									<option>Category 2</option>
 									<option>Category 3</option>
+									<option>Category 4</option>
+									<option>Category 5</option>
 								</select>
 							</div>
 							

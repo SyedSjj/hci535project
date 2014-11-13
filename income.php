@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
 		
-        <title>Budget Planner | Partners</title>
+       <title>Budget Planner | Income</title>
 		
         <!-- Include all the css stuff -->
 		<?php include ('includes/cssLibrary.php') ?>
@@ -24,7 +24,7 @@
 				<!-- Content Header (Page header) -->
 				<section class="content-header">
 					<h1>
-						Partners
+						Income
 					</h1>
 				</section>
 			</aside>
@@ -32,17 +32,29 @@
 			<aside class="right-side" style="margin-right: 30px;">
 				<div class="box box-warning" style="margin-top:15px; margin-left:15px;">
 					<div class="box-header">
-						<h3 class="box-title">Add Partners</h3>
+						<h3 class="box-title">Add an Income</h3>
 					</div>
 					<form method="POST" action="./partner.php" >
 						<div class="box-body">
-							<label>Email:</label>
+							<label>Income:</label>
 							<div class="input-group">
-								<span class="input-group-addon">@</span>
-								<input class="form-control" type="text" placeholder="Email">
+								<span class="input-group-addon">$</span>
+								<input class="form-control" type="text" placeholder="Income USD">
 							</div>
 							<br/>
-							
+							<label>Month:</label>
+							<div class="input-group">
+								<span class="input-group-addon">M</span>
+								<input class="form-control" type="text" placeholder="Month (1-12)">
+							</div>
+							<br/>
+							<label>Year:</label>
+							<div class="input-group">
+								<span class="input-group-addon">Y</span>
+								<input class="form-control" type="text" placeholder="Year (ex:1946)">
+							</div>
+							<br/>
+							<label>Comments:</label>
 							<div class='box-body pad' style="padding: 0px;">
 								<form>
 									<textarea class="textarea" placeholder="Send a message to the partner" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
@@ -50,63 +62,52 @@
 							</div>
 							
 							<br/>
-							<button style="margin-top: 12px;" class="btn btn-primary" type="submit">Send</button>
+							<button style="margin-top: 12px;" class="btn btn-primary" type="submit">Add</button>
 						</div>
 					</form>
 				</div>
 				
 				<div class="box" style="margin-top:15px; margin-left:15px;">
 					<div class="box-header">
-						<h3 style="width: 100%;" class="box-title">People Sharing this Account
-						
-						<form style="float:right;" class="text-right" action="#">
-							<div class="input-group">
-								<input type="text" placeholder="Search" class="form-control input-sm">
-								<div class="input-group-btn">
-									<button class="btn btn-sm btn-primary" name="q" type="submit"><i class="fa fa-search"></i></button>
-								</div>
-							</div>
-						</form>
-						
-						</h3>
+						<h3 class="box-title">Incomes</h3>
 					</div>
 					<div class="box-body">
 						<table class="table table-bordered">
 							<tbody><tr>
 								<th style="width: 10px">#</th>
-								<th>Name</th>
-								<th style="width: 40px"></th>
+								<th>Work</th>
+								<th>Percentage</th>
 								<th style="width: 40px"></th>
 							</tr>
 							<tr>
 								<td>1.</td>
-								<td>Name 1</td>
-								<td><a href="#"><span class="badge bg-blue">Edit</span></a></td>
-								<td><a href="#"><span class="badge bg-red">Delete</span></a></td>
+								<td>Work 1</td>
+								<td>
+									<div class="progress xs progress-striped active">
+										<div style="width: 55%" class="progress-bar progress-bar-danger"></div>
+									</div>
+								</td>
+								<td><span class="badge bg-red">55%</span></td>
 							</tr>
 							<tr>
 								<td>2.</td>
-								<td>Name 2</td>
-								<td><a href="#"><span class="badge bg-blue">Edit</span></a></td>
-								<td><a href="#"><span class="badge bg-red">Delete</span></a></td>
+								<td>Work 2</td>
+								<td>
+									<div class="progress xs progress-striped active">
+										<div style="width: 70%" class="progress-bar progress-bar-yellow"></div>
+									</div>
+								</td>
+								<td><span class="badge bg-yellow">70%</span></td>
 							</tr>
 							<tr>
 								<td>3.</td>
-								<td>Name 3</td>
-								<td><a href="#"><span class="badge bg-blue">Edit</span></a></td>
-								<td><a href="#"><span class="badge bg-red">Delete</span></a></td>
-							</tr>
-							<tr>
-								<td>4.</td>
-								<td>Name 4</td>
-								<td><span class="badge bg-blue">Edit</span></a></td>
-								<td><span class="badge bg-red">Delete</span></a></td>
-							</tr>
-							<tr>
-								<td>5.</td>
-								<td>Name 5</td>
-								<td><a href="#"><span class="badge bg-blue">Edit</span></a></td>
-								<td><a href="#"><span class="badge bg-red">Delete</span></a></td>
+								<td>Work 3</td>
+								<td>
+									<div class="progress xs progress-striped active">
+										<div style="width: 30%" class="progress-bar progress-bar-blue"></div>
+									</div>
+								</td>
+								<td><span class="badge bg-light-blue">30%</span></td>
 							</tr>
 						</tbody></table>
 					</div><!-- /.box-body -->
@@ -119,9 +120,7 @@
 							<li><a href="#">></a></li>
 						</ul>
 					</div>
-				</div>
 			</aside>
-			
         </div>
 		
 		
