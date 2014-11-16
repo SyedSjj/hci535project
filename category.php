@@ -101,7 +101,7 @@
  echo "<th style='width: 40px'></th>";
  echo "<th style='width: 40px'></th>";
  echo "</tr>";
-  $qur = "select * from category limit 5";
+  $qur = "select category_name from category union select cst_category_name from cst_category where cst_category.user_id=$userid";
                 $sql_result = mysql_query($qur); 
                 //echo $sql_query;
                 if (($sql_result)||(mysql_errno($con))) 

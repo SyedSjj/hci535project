@@ -1,6 +1,7 @@
 <?php include ('core/init.php'); ?>
 <?php include ('core/database/connect.php'); ?>
 <?php include ('includes/protect.php'); ?>
+<?php $userid=$_SESSION['user_id'];?>
 
 <!DOCTYPE html>
 <html>
@@ -50,7 +51,13 @@
                 <div class="col-lg-3 col-xs-6">
                         <div class="small-box bg-aqua">
                                 <div class="inner">
-                                        <h3>3</h3>
+                                        <h3><?php 
+                                        $qur = "SELECT (SELECT COUNT(*) FROM category )+ (SELECT COUNT(*) from cst_category WHERE user_id = $userid ) AS SumCount";
+                                         $result1=mysql_query($qur);
+                                        $row = mysql_fetch_array($result1);
+                                        $totalCategory = $row['SumCount'];
+                                        echo $totalCategory;
+                                        ?></h3>
                                         <p>Categories</p>
                                 </div>
                                 <div class="icon">
@@ -99,7 +106,7 @@
        
        <div class='box-body'>
                  <?php
-                 $userid=$_SESSION['user_id'];
+                 
                 echo "<TABLE class='table table-bordered'>\n";
                 echo "<TBODY>\n";
                 echo "<tr>\n";
@@ -116,7 +123,7 @@
                // echo $TotalExp;
                 
                 
-                $qur = "SELECT category_name, expense_amount from expense Inner Join category on expense.category_id=category.category_id where expense.user_id=$userid";
+                $qur = "select category_name, expense_amount from expense inner join category on category.category_id=expense.category_id where expense.user_id=$userid group by expense.category_id";
                 $sql_result = mysql_query($qur); 
                  //echo $sql_query;
                 if (($sql_result)||(mysql_errno($con))) 
@@ -142,7 +149,7 @@
                             echo "<td>".$Category."</td>\n";
                             echo "<td>\n";
                             echo "<div class='progress xs progress-striped active'>\n";
-                            echo "<div style='width:55%' class='progress-bar progress-bar-danger'>";
+                            echo "<div style='width:$per%' class='progress-bar progress-bar-danger'>";
                             echo "</div>\n";
                             echo "</div>\n";
                             echo "</td>\n";
@@ -195,7 +202,7 @@
     <form action="index.php?id=1" method="post">
          <input type="hidden" name="ispost" value="1"/>
 <div class="col-md-6">
-    <div class="box box-warning" style="height: 262px;">
+    <div class="box box-warning">
 	<div class="box-header">
         	<h3 class="box-title">Add an Expense</h3>
 	</div>
@@ -252,9 +259,20 @@
                 ?>
             </div>
             <div class="form-group">
-                <label>Date</label>
+                <label>Date:</label>
                  <div class="input-group">
-               <input type="text" name="date" id="datepicker">
+              <!--<input type="text" name="date" id="datepicker">-->
+                     <div class="form-group">
+                                        
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-calendar"></i>
+                                            </div>
+                                            <input type="text" id="datepicker" name="date" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask/>
+                                        </div><!-- /.input group -->
+                                    </div><!-- /.form group -->
+
+
             </div>
             </div>
             <button style="margin-top: 12px;" class="btn btn-primary" type="submit">Add</button>
