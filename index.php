@@ -123,7 +123,10 @@
                // echo $TotalExp;
                 
                 
-                $qur = "select category_name, expense_amount from expense inner join category on category.category_id=expense.category_id where expense.user_id=$userid group by expense.category_id";
+                $qur = "SELECT category_name, expense_amount, SUM(expense_amount)as TotalExp FROM expense
+                        inner join category on
+                        category.category_id=expense.category_id where expense.user_id=$userid
+                        GROUP BY expense.category_id";
                 $sql_result = mysql_query($qur); 
                  //echo $sql_query;
                 if (($sql_result)||(mysql_errno($con))) 
@@ -139,7 +142,7 @@
                         $Category = $row['category_name'];
                         //$Exp_Amt= $row['Exp_Amount'];
                         //echo $Exp_Amt;
-                        $PercentExp = (100*$row['expense_amount'] ) / $TotalExp ;
+                        $PercentExp = (100*$row['TotalExp'] ) / $TotalExp ;
                         $per = round($PercentExp);
                        // $exp = ($row['Exp_amount']);
                        //echo $Category;
